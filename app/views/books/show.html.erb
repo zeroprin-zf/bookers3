@@ -1,1 +1,21 @@
-<h1>本の詳細</h1>
+<%= render 'template/user', user: @user %>
+
+ <%= link_to "edit" %>
+
+<%= render 'template/book', book: @book %>
+
+<h1>Book detail</h1>
+<table>
+  <tbody>
+    <tr>
+      <td><%= image_tag @books.get_image %><br>
+      <%= link_to @books.user %></td><!--名前表示できてない-->
+      <td><%= link_to @books.title %></td><!-- , book_path(@books.id)入るかも-->
+      <td><%= @books.body %></td>
+      <% if @books.user == current_user %>
+        <td><%= link_to "Edit", edit_book_path(@books.id) %></td>
+        <td><%= link_to "Destroy",  book_path(@books), method: :delete %></td>
+      <% end %>
+    </tr>
+  </tbody>
+</table>

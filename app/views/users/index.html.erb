@@ -1,1 +1,24 @@
-<h1>ユーザーの一覧</h1>
+<%= render 'template/user', user: @user %>
+
+ <%= link_to "edit" %>
+
+<%= render 'template/book', book: @book %>
+
+<h1>Users</h1>
+<table>
+    <thead>
+      <tr>
+        <th>image</th>
+        <th>name</th>
+      </tr>
+    </thead>
+  <% @users.each do |user| %>
+   <tbody>
+     <tr>
+       <td><%= image_tag user.get_profile_image(100, 100) %></td>
+       <td><%= user.name %></td>
+       <td><%= link_to "show" %></td>
+     </tr>
+   </tbody>
+  <% end %>
+</table>
