@@ -1,24 +1,29 @@
-<%= render 'template/user', user: @user %>
-
- <%= link_to "edit" %>
-
-<%= render 'template/book', book: @book %>
-
-<h1>Users</h1>
-<table>
-    <thead>
-      <tr>
-        <th>image</th>
-        <th>name</th>
-      </tr>
-    </thead>
-  <% @users.each do |user| %>
-   <tbody>
-     <tr>
-       <td><%= image_tag user.get_profile_image(100, 100) %></td>
-       <td><%= user.name %></td>
-       <td><%= link_to "show" %></td>
-     </tr>
-   </tbody>
-  <% end %>
-</table>
+<div class="container">
+  <div class="row">
+   <div class="col-md-3">
+      <%= render 'template/user', user: @user %>
+      <%= link_to "edit" %>
+      <%= render 'template/book', book: @book %>
+   </div>
+   <div class="offset-md-1 col-md-8">
+     <h1>Users</h1>
+      <table>
+          <thead>
+            <tr>
+              <th>image</th>
+              <th>name</th>
+            </tr>
+          </thead>
+        <% @users.each do |user| %>
+         <tbody>
+           <tr>
+             <td><%= image_tag user.get_profile_image(100, 100) %></td>
+             <td><%= user.name %></td>
+             <td><%= link_to "show" %></td>
+           </tr>
+         </tbody>
+        <% end %>
+      </table>
+   </div>
+  </div>
+</div>
