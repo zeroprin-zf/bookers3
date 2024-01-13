@@ -39,16 +39,24 @@
                aria-expanded="false"、aria-label="Toggle navigation"-->
               <% if user_signed_in? %>
                <li class="nav-item p-3">
-                 <%= link_to "Home", root_path %>
+                 <%= link_to root_path do %>
+                  <i class="fa-solid fa-house"></i>Home
+                 <% end %>
                </li>
                <li class="nav-item p-3">
-                 <%= link_to "Users", users_path %>
+                 <%= link_to users_path do %>
+                  <i class="fa-solid fa-users"></i>Users
+                 <% end %>
                </li>
                <li class="nav-item p-3">
-                 <%= link_to "Books", books_path %>
+                 <%= link_to books_path do %>
+                  <i class="fa-solid fa-book-open"></i>Books
+                 <% end %>
                </li>
                <li class="nav-item p-3">
-                 <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+                 <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa-solid fa-right-from-bracket"></i>Log out
+                 <% end %>
                </li>
               <% else %>
                <li class="nav-item p-3">
