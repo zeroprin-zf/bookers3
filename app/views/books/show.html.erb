@@ -9,7 +9,7 @@
   <tbody>
     <tr>
       <td><%= image_tag @books.get_image %><br>
-      <%= link_to @books.user %></td><!--名前表示できてない-->
+      <%= link_to @books.user.name %></td><!--名前表示できてない-->
       <td><%= link_to @books.title %></td><!-- , book_path(@books.id)入るかも-->
       <td><%= @books.body %></td>
       <% if @books.user == current_user %>
