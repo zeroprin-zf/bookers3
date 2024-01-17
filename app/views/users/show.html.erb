@@ -17,8 +17,9 @@
     <% @books.each do |book| %>
     <tr>
       <td></td><!--リンクでuserのshowページ-->
-      <td></td>
-      <td></td>
+      <td><%= book.title %></td>
+      <td><%= book.opinion %></td>
     </tr>
+    <% end %>
   </tbody>
 </table>
