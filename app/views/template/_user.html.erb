@@ -3,4 +3,11 @@
    <tr><%= image_tag user.get_profile_image(100,100)%></tr><!--book側でのリサイズができない-->
    <tr><th>name</th><td><%= user.name %></td></tr>
    <tr><th>introduction</th><td><%= user.introduction %></td></tr>
+   <% if user.email != "guest@example.com" %>
+    <td>
+       <%= link_to edit_user_path(user), class: "btn btn-outline-secondary btn-block" do %>
+        <i class="fa-solid fa-user-gear"></i>
+       <% end %>
+   </td>
+   <% end %>
 </table>
