@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   get 'homes/about' => 'homes#about', as:'about'
   resources :books, only: [:new, :edit, :create, :index, :show, :destroy, :update]
   resources :users, only: [:index, :show, :edit, :update]
+  #退会確認画面
+  get 'users/check' => 'users#check'
+  #論理削除用のルーティング
+  patch 'users/withdraw' => 'users#withdraw'
   devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
   end
