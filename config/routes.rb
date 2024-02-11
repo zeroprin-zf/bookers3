@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   get 'homes/top'
   root to: "homes#top"
   get 'homes/about' => 'homes#about', as:'about'
-  resources :books, only: [:new, :edit, :create, :index, :show, :destroy, :update]
+  resources :books, only: [:new, :edit, :create, :index, :show, :destroy, :update] do
+   resource :favorites, only: [:create, :destroy]
+  end
   resources :users, only: [:index, :show, :edit, :update]
   #退会確認画面
   get 'user/check' => 'users#check'#users/checkにするとshowのparamsに引っ掛かる エラーが出たときid="path"の前を確認
