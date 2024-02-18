@@ -9,7 +9,9 @@
       <%= link_to @books.user.name %></td><!--名前表示できてない-->
       <td><%= link_to @books.title %></td><!-- , book_path(@books.id)入るかも-->
       <td><%= @books.body %></td>
-      <td><%= render "favorites/btn", book: @book %></td>
+      <td id="favorite_btn_<%= @book.id %>">
+        <%= render "favorites/btn", book: @book %>
+      </td>
       <% if @books.user == current_user %>
         <td><%= link_to "Edit", edit_book_path(@books.id) %></td>
         <td><%= link_to "Destroy",  book_path(@books), method: :delete %></td>
