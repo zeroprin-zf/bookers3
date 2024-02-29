@@ -1,0 +1,25 @@
+<h2>Follow Users</h2>
+ <% if @users.exists? %>
+  <table>
+      <thead>
+        <tr>
+          <th>image</th>
+          <th>name</th>
+        </tr>
+      </thead>
+    <% @users.each do |user| %>
+     <tbody>
+       <tr>
+         <td><%= image_tag user.get_profile_image(100, 100) %></td>
+         <td><= user.name %></td>
+         <td>フォロー数: <%= user.followings.count %></td>
+         <td>フォロワー数: <%= user.followers.count %></td>
+         <td><%= render "relationships/btn", user: user,  options: { class: "follow-link" } %></td>
+         <td><%= link_to "show", user_path(user.id) %></td>
+       </tr>
+     </tbody>
+    <% end %>
+  </table>
+ <% else %>
+  <p>ユーザーがいません</p>
+<% end %>
