@@ -7,6 +7,7 @@
 
  <% if @messages.present? %>
   <% @messages.each do |m| %>
+
    <% @myUserId == m.user.id %>
     <p><%= m.user.name %></p>
     <p><%= m.message %></p>
