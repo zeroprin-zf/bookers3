@@ -9,6 +9,7 @@
       <%= link_to @books.user.name %></td><!--名前表示できてない-->
       <td><%= link_to @books.title %></td><!-- , book_path(@books.id)入るかも-->
       <td><%= @books.body %></td>
+      <td>閲覧数: <%= @books.read_counts.count %></td>
       <td id="favorite_btn_<%= @books.id %>">
         <%= render "favorites/btn", book: @books %>
       </td>
