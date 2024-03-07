@@ -1,0 +1,2 @@
+class ReadCount < ApplicationRecord
+end
