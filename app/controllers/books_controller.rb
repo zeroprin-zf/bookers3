@@ -19,7 +19,7 @@ class BooksController < ApplicationController
     @book = Book.new
     @books = Book.find(params[:id])
     @user = @books.user
-    @book_comment = Book.new
+    #@book_comment = Book.new
     read_count = ReadCount.new(book_id: @books.id, user_id: current_user.id)
     read_count.save
     current_user.read_counts.create(book_id: @books.id)

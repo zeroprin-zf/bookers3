@@ -32,5 +32,6 @@
       <td><%= book.body %></td>
     </tr>
     <% end %>
+    <%= current_user.books.where('created_at > ?', Date.today).count %>
    </tbody>
 </table>
