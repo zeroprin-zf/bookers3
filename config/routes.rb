@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
     resources :messages, only: [:create]
     resources :rooms, only: [:create, :show]
+    resources :groups, only: [:new, :index, :show, :create, :edit, :update]
 
   #退会確認画面
   get 'user/check' => 'users#check'#users/checkにするとshowのparamsに引っ掛かる エラーが出たときid="path"の前を確認
